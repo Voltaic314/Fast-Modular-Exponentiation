@@ -29,7 +29,7 @@ def find_largest_power_of_two(input_number: int) -> int:
 def convert_number_to_binary(input_number: int) -> str:
     """
     Takes an input number and converts it to a binary string of characters of which we can iterate through using the
-    fast modular exponentation algorithm.
+    fast modular exponentiation algorithm.
 
     :param input_number: Any integer that you wish to get the full binary representation for.
     :returns: binary string, not including the "0b" at the beginning.
@@ -38,6 +38,15 @@ def convert_number_to_binary(input_number: int) -> str:
 
 
 def fast_modular_exponentiation(input_number: int, exponent: int, modulus_number) -> int:
+    """
+    This function actually performs the algorithm in question. For more information on how the algorithm works,
+    watch the linked video at the top of the file.
+
+    :param input_number: base number. so i.e. in (240 ^ 262) % 14, 240 would be your base number.
+    :param exponent: exponent number. so i.e. in (240 ^ 262) % 14, 262 would be your exponent number.
+    :param modulus_number: modulus number. so i.e. in (240 ^ 262) % 14, 14 would be your modulus number.
+    :returns: Modulus of the final product. The answer to your question. :)
+    """
 
     binary_number_string = convert_number_to_binary(exponent)[1:]
 
@@ -96,12 +105,9 @@ def get_numbers_from_user():
 def main():
     """
     This function uses all the other functions in the specified order in order to make this script work properly.
-
     :returns: None
     """
-
     number_list = get_numbers_from_user()
-
     base_number = number_list[0]
     exponent_number = number_list[1]
     modulus_number = number_list[2]
